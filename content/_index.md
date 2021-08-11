@@ -8,7 +8,7 @@ images:
 - img/renoir.jpg
 show_action_link: true
 show_social_links: true
-subtitle: 'A short course for R / Medicine 2021'
+subtitle: 'A short course @ R / Medicine 2021'
 text_align_left: false
 title: 'R Markdown for Reproducible Research'
 type: home
