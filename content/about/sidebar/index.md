@@ -1,6 +1,6 @@
 ---
 ## Configure sidebar content in narrow column
-author: "R Markdown for Reproducible Research"
+author: "Reproducible Research with R"
 role: "A short course @ R / Medicine 2021"
 avatar_shape: rounded # circle, square, rounded, leave blank to exclude
 show_social_links: true # specify social accounts in site config
