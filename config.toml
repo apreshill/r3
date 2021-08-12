@@ -110,35 +110,20 @@ enableEmoji = true
 [menu]
   # Configure header
   [[menu.header]]
-    name = "About"
-    title = "About"
-    url = "/about/"
+    name = "Start"
+    title = "Get started"
+    url = "/start/"
     weight = 1
   [[menu.header]]
-    name = "Blog"
-    title = "Blog"
-    url = "/blog/"
+    name = "Materials"
+    title = "Materials for the short course"
+    url = "/materials/"
     weight = 2
   [[menu.header]]
     name = "People"
     title = "Your teaching team"
     url = "/people/"
     weight = 3
-  [[menu.header]]
-    name = "Talks"
-    title = "Talks"
-    url = "/talk/"
-    weight = 4
-  [[menu.header]]
-    name = "A collection"
-    title = "A collection"
-    url = "/collection/"
-    weight = 5
-  [[menu.header]]
-    name = "Elements"
-    title = "Element Page"
-    url = "/elements/"
-    weight = 6
 
   # Configure footer
   [[menu.footer]]

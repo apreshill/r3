@@ -1,0 +1,36 @@
+---
+title: "Why blogdown?"
+weight: 8
+subtitle: "Best practices for building Hugo sites with blogdown."
+date: 2021-01-26
+draft: false
+links:
+- icon: campground
+  icon_pack: fas
+  name: slides
+  url: "/slides/08-why-blogdown.html"
+- icon: hiking
+  icon_pack: fas
+  name: activity
+  url: "collection/day02/08-blogdown/#activity"
+---
+
+## Why blogdown?
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/08-why-blogdown.html", ratio = "16:9")
+```
+
+
+
+## Activity 
+
+TIME: `r emo::ji("stopwatch")` 10 minutes
+
+Choose your own adventure! You may:
+
+1. Run through the blogdown checks, following: <https://alison.rbind.io/post/2020-12-27-blogdown-checks/>
+
+1. Explore the blog posts (each post is a leaf bundle). Feel free to add code or other content to these posts. Try out panelsets! 
+
+
