@@ -6,6 +6,10 @@ draft: false
 excerpt: "I'm a bioinformatics PhD student at Iowa State University studying the impact of agriculture on microbial diversity and the spread of antibiotic resistance. I like reproducible research, literate programming, and teaching."
 featured: true
 links:
+- icon: link
+  icon_pack: fas
+  name: homepage
+  url: https://pommevilla.rbind.io/
 - icon: twitter
   icon_pack: fab
   name: twitter

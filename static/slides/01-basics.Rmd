@@ -123,7 +123,7 @@ class: middle, center
 
 [`r fontawesome::fa("github")` @pommevilla](https://github.com/pommevilla)    
 [`r fontawesome::fa("twitter")` @pommevilla](https://twitter.com/pommevilla)  
-[`r fontawesome::fa("link")` pommevilla.netlify.app](https://pommevilla.netlify.app/)
+[`r fontawesome::fa("link")` pommevilla.rbind.io](https://pommevilla.rbind.io/)
 ]
 ]
 
