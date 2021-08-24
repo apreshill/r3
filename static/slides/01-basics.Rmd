@@ -287,8 +287,18 @@ background-color: #fff
 # Why Quarto?
 
 ---
+background-image: url(images/quarto-how.png)
+background-size: contain
+background-position: bottom
+class: center, top
+background-color: #fff
+
+# How does it work?
+
+---
 background-image: url(images/render.png)
 class: top, center
+background-position: 30% 50%
 
 # Let's render!
 
