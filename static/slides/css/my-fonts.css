@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;1,300&display=swap');
+
+body {
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  font-weight: 400;
+  color: var(--french-blue);
+}
+
+h1 {
+  font-family: 'Spectral', serif;
+  font-weight: 300;
+  color: var(--french-blue);
+}
+
+h2 {
+  font-family: 'Spectral', serif;
+  font-weight: 300;
+  color: var(--french-blue);
+}
+
+h3 {
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: var(--french-blue);
+  font-size: 1.3em !important;
+}
+
+h4, h5, h6 {
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  font-weight: 400;
+  color: var(--french-blue);
+}
+
+.remark-code,
+.remark-inline-code{
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+@media print {
+  body {
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-weight: 400;
+}
