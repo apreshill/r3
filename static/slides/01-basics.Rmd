@@ -202,9 +202,6 @@ Try to identify these parts in the source:
 
 1. The **code**
 
-1. The **output**
-
-
 **If this was easy**, try to find all code that produces a *plot*.
 
 _psst...`01-explore-alison-params.qmd` is also there..._
@@ -257,25 +254,43 @@ background-size: contain
 background-position: right
 background-color: #fff
 
-.pull-left[
+.columns[
+
+.left-col[
+
 ## What is Quarto?
+
+]
 ]
 
 ---
+background-image: url(images/py-alone.png)
+background-size: contain
+
+
+# Why Quarto?
+
+
+
+---
 class: middle, center
-background-image: url(images/rpy.png)
-background-size: 50%
-background-position: right
+background-image: url(images/py-together.png)
+background-size: contain
+
+---
+background-image: url(images/hexes.png)
+background-size: contain
+background-position: left
+class: right, middle
 background-color: #fff
 
-.pull-left[
-## What is Quarto?
-]
+# Why Quarto?
 
+---
+background-image: url(images/render.png)
+class: top, center
 
-
-
-
+# Let's render!
 
 ---
 class: inverse
