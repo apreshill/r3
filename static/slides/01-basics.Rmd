@@ -359,6 +359,18 @@ class: inverse, center, middle
 # Text
 
 ---
+class: middle, left, inverse
+background-image: url(https://quarto.org/docs/visual-editor/images/visual-editing.png)
+background-position: right
+background-size: contain
+
+# Live demo: 
+
+### Quarto visual editor (Paul V)
+
+https://quarto.org/docs/visual-editor/
+
+---
 
 # <center>Headers</center>
 
