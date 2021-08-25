@@ -304,14 +304,14 @@ age_histogram
 ]
 ---
 
-# fig.cap
+# fig-cap
 
 .pull-left[
 
 ````
-```{r age-plot}`r ''` 
+```{r fig-age}`r ''` 
 #| echo: FALSE
-#| fig.cap: 'Age distributions'
+#| fig-cap: 'Age distributions'
 age_histogram
 ```
 ````
@@ -320,7 +320,7 @@ age_histogram
 
 .pull-right[
 
-```{r age-plot, echo = FALSE, fig.retina = 3}
+```{r fig-age, echo = FALSE, fig.retina = 3, out.width="50%"}
 age_histogram
 ```
 
@@ -436,10 +436,12 @@ class: middle, center
 
 .pull-left[
 
-See Figure `@fig-age-plot`.
+See Figure `@fig-age`.
 
 ````
-```{r age-plot, echo=FALSE, fig.cap='Age distributions'}`r ''`
+```{r fig-age}`r ''`
+#| echo: FALSE
+#| fig-cap: 'Age distributions'
 age_histogram
 ```
 ````
@@ -452,7 +454,7 @@ See Figure [1]().
 
 .center[
 
-```{r ref.label = 'age-plot', out.width='70%', echo = FALSE, fig.retina = 3, fig.cap='Age distributions'}
+```{r ref.label = 'fig-age', out.width='70%', echo = FALSE, fig.retina = 3, fig.cap='Age distributions'}
 ```
 
 ]
@@ -460,6 +462,7 @@ See Figure [1]().
 ]
 
 ---
+class: middle, center
 
 # Key takeaway
 
@@ -467,23 +470,26 @@ Once you have:
 
 `r emo::ji("heavy_check_mark")` A labeled chunk that produces a plot
 
-`r emo::ji("heavy_check_mark")` A figure caption using `fig.cap`
+`r emo::ji("heavy_check_mark")` AND the plot label starts with `fig-`
+
+`r emo::ji("heavy_check_mark")` AND a figure caption using `fig-cap`
 
 Then you can have:
 
-### Cross-references!
+### Cross-references! In any format.
 
 ---
+class: inverse, middle
 
 # Live code demo
 
 We open up `02-draft.Rmd` and take the static image and together we:
 
-1. Label that chunk
+1. Label that chunk like `fig-bmj`
 
 1. Add a cross-reference like `see Figure @fig-bmj`
 
-1. Try again with `counts-by-site` code chunk: `see Figure @fig-counts-by-site` _(watch what happens if try to cross-reference without a caption!)_
+1. Try again with `counts-by-site` code chunk: `see Figure @fig-counts-by-site` _(watch what happens if try to cross-reference without a caption, or use a chunk label that does not start with `fig-`!)_
 
 
 ---
@@ -521,7 +527,6 @@ Tabsets
 
 #| layout-ncol: 2
 ---
-class: your-turn
 
 # Your turn: Part 2 of 2
 
@@ -770,7 +775,9 @@ class: middle, center, inverse
   <strong class="fa-stack-1x" style="color:#2f5275;">`r (episode_counter <- episode_counter + 1)` </strong>
 </span> 
 
----
+--
+
+Tables
 
 ---
 class: middle
@@ -990,5 +997,5 @@ class: middle, center
 # Time for a break!
 
 ```{r echo = FALSE}
-countdown(minutes = 15, update_every = 15)
+countdown(minutes = 10, update_every = 15)
 ```

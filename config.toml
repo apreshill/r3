@@ -33,7 +33,7 @@ enableEmoji = true
   description = "A modern, beautiful, and easily configurable blog theme for Hugo."
   favicon = "/img/favicon.ico"
   logo = "/img/quarto.png"
-  mainSections = ["blog", "project", "talk"]
+  mainSections = ["project"]
   navallcaps = true
   # show/hide social icons in site header & footer
   # configure social icons and links below in [[params.social]]
@@ -82,6 +82,10 @@ enableEmoji = true
   # Icon pack "fas" includes solid icons, see: https://fontawesome.com/icons?d=gallery&s=solid&m=free
   # Icon pack "far" includes regular icons, see: https://fontawesome.com/icons?d=gallery&s=regular&m=free
   [[params.social]]
+      icon      = "cloud" # icon name without the 'fa-'
+      icon_pack = "fas"
+      url       = "https://rstd.io/r3-cloud/"
+  [[params.social]]
       icon      = "globe" # icon name without the 'fa-'
       icon_pack = "fas"
       url       = "https://r-medicine.org/"
@@ -115,11 +119,6 @@ enableEmoji = true
     url = "/start/"
     weight = 1
   [[menu.header]]
-    name = "Materials"
-    title = "Materials for the short course"
-    url = "/materials/"
-    weight = 2
-  [[menu.header]]
     name = "People"
     title = "Your teaching team"
     url = "/people/"
@@ -136,11 +135,6 @@ enableEmoji = true
     title = "Contact form"
     url = "/contact/"
     weight = 2
-  [[menu.footer]]
-    name = "Contributors"
-    title = "Contributors"
-    url = "/contributors/"
-    weight = 3
 
 # see https://gohugo.io/about/hugo-and-gdpr/
 [privacy]

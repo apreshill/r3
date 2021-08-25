@@ -1,0 +1,22 @@
+---
+title: "Why online?"
+weight: 1
+subtitle: "Why and how to introduce yourself online."
+excerpt: "I cannot promise fame or fortune, but I can promise: friendship, findability, fun, and function."
+links:
+- icon: campground
+  icon_pack: fas
+  name: slides
+  url: "/slides/01-why-online.html"
+- icon: hiking
+  icon_pack: fas
+  name: activity
+  url: "collection/day01/01-github/#activity"
+---
+
+## Slides
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "/slides/01-basics.html", ratio = "16:9")
+```
+
