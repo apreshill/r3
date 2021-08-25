@@ -2,7 +2,7 @@
 title: "The basics"
 session: "01"
 subtitle: "R / Medicine 2021"
-author: Alison Hill
+author: Alison Hill & Paul Villanueva
 output:
   xaringan::moon_reader:
     css: ["default", "css/my-theme.css", "css/my-fonts.css"]
@@ -16,6 +16,8 @@ output:
       countIncrementalSlides: false
       ratio: "16:9"
       beforeInit: "https://platform.twitter.com/widgets.js"
+    includes:
+      in_header: assets/header.html 
 params:
   cloud_link: "https://rstd.io/r3-cloud"
 ---
@@ -295,8 +297,8 @@ background-color: #fff
 
 ---
 background-image: url(images/render.png)
-class: top, center
-background-position: 30% 50%
+class: middle center
+background-position: 50% 60%
 
 # Let's render!
 
@@ -605,6 +607,58 @@ What about lists? Bulleted? Numbered?
 `1. Item 1`
 
 ]
+
+---
+
+# Your turn
+
+Find this section:
+
+```markdown
+<--TODO: add markdown table of treatment arms here-->
+```
+
+Using the visual markdown editor, make this table:
+
+| Arm | Drug   |
+|:----|:-------|
+| A   | IFL    |
+| F   | FOLFOX |
+| G   | IROX   |
+
+
+_psst...markdown on the next slide..._
+
+```{r echo=FALSE}
+countdown(minutes = 3)
+```
+
+---
+# Your turn
+
+## Markdown versions
+
+.pull-left[
+```markdown
+| Arm | Drug   |
+|:----|:-------|
+| A   | IFL    |
+| F   | FOLFOX |
+| G   | IROX   |
+```
+]
+
+.pull-right[
+```markdown
+|Arm|Drug|
+|:---|:---|
+|A|IFL|
+|F|FOLFOX|
+|G|IROX|
+```
+]
+
+Spacing actually doesn't matter - it mainly helps your eyeballs.
 
 ---
 class: inverse, center, middle
@@ -949,6 +1003,36 @@ glimpse(mockdata)
 
 + List multiples separated by commas<br>`{r option1=value, option2=value}`
 
+]
+---
+
+# message / warning
+
+
+
+![](https://www.tidyverse.org/images/tidyverse_1.2.0/tidyverse_1-2-0_pkg_load.gif)
+
+
+
+---
+
+# message / warning
+
+.pull-left[
+
+````
+```{r message=FALSE, warning=FALSE}`r ''`
+library(tidyverse)
+```
+````
+
+]
+
+.pull-right[
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+```
 
 ]
 
@@ -965,91 +1049,6 @@ str(knitr::opts_chunk$get())
 
 ]
 
----
-
-# Chunk labels
-
-.pull-left[
-
-````
-```{r peek, echo=FALSE, results='hide'}`r ''`
-#| label: peek
-#| echo: FALSE
-#| results: 'hide'
-glimpse(mockdata)
-```
-````
-
-+ Place on separate lines after `#|`
-
-]
-
-.pull-right[
-
-+ Careful! No duplicate chunk labels
-
-    ````
-    ```{r}`r ''`
-    #| label: peek
-    head(mockdata)
-    ```
-    ````
-
-    ```
-    Error in parse_block(g[-1], g[1], params.src) : 
-      duplicate label 'peek'
-    Calls: <Anonymous> ... process_file -> split_file -> lapply -> FUN -> parse_block
-    Execution halted
-    ```
-
-]
-
-???
-
-how can we make it easier on ourselves to explore the code in here?
-
-show how to add chunk labels and view in IDE interactively
-
----
-class: middle, center
-
-# Pet or livestock?
-
-.footnote[https://masalmon.eu/2017/08/08/chunkpets/]
-
----
-class: middle, center
-
-# A good chunk label
-
-.pull-left[
-
-### Good
-
-`myplot`
-
-`my-plot`
-
-`myPlot`
-
-`myplot1`
-
-![](images/kebab.png)
-]
-
-.pull-right[
-
-### Bad
-
-`my_plot`
-
-`my plot`
-
-everything else!
-
-![](images/snake.png)
-
-]
 
 ---
 
@@ -1119,6 +1118,139 @@ knitr::include_graphics("images/orchestra.jpg")
 ---
 class: middle, center
 
+# Output formats
+
+---
+class: your-turn
+
+# Your turn
+
+## Use a different built-in format
+
+.pull-left[
+
+Use the drop-down menu for the `r emo::ji("yarn")` **Knit** button and try:
+
+1. Knit to Word
+
+1. Knit to PDF
+
+]
+
+.pull-right[
+```{r echo=FALSE, out.width="60%", fig.align="center"}
+knitr::include_graphics("images/knit-dropdown.png")
+```
+
+]
+
+```{r echo = FALSE}
+countdown(minutes = 2)
+```
+
+---
+class: middle
+
+# Check-in
+
+.pull-left[
+How do you use only the **default** output options?
+
+(a)
+```yaml
+---
+output: html_document()
+---
+```
+(b)
+```yaml
+---
+output: html_document
+---
+```
+
+]
+
+--
+
+.pull-right[
+How do you add an output **option** to a format in your YAML?
+
+(a)
+```yaml
+---
+output: 
+  html_document: 
+    toc: true
+---
+```
+
+(b)
+```yaml
+---
+output: 
+  html_document(toc=true)
+---
+```
+
+]
+
+---
+class: middle
+
+# Check-in
+
+.pull-left[
+How do you add another output **format** to your YAML?
+
+(a)
+```yaml
+---
+output: 
+  html_document: default
+  word_document: default
+---
+```
+(b)
+```
+---
+output: 
+  html_document()
+  word_document()
+---
+```
+
+]
+
+--
+
+
+.pull-right[
+How do you now add output **options** to your YAML?
+
+(a)
+```yaml
+---
+output: 
+  html_document: 
+    toc: true
+  word_document: default
+---
+```
+(b)
+```
+---
+output: 
+  html_document(toc=true)
+  word_document(default)
+---
+```
+
+]
+
+---
+class: middle, center
+
 # Output options
 
 ---
@@ -1157,28 +1289,27 @@ knitr::include_graphics("images/orchestra.jpg")
 ]
 
 ---
-class: your-turn
 
-# Your turn
+# Your turn: Edit your YAML
 
-## Edit your YAML
+Use the linked Quarto docs to:
 
-Use `?html_document` from your R console to:
+1. Add a [floating table of contents](https://quarto.org/docs/output-formats/html-basics.html#table-of-contents)
 
-1. Add a floating table of contents
+1. Add [commenting](https://quarto.org/docs/output-formats/html-basics.html#commenting)
 
-1. Add a theme
+1. Add a [theme](https://quarto.org/docs/output-formats/html-themes.html)
 
-1. Use the "kable" method to print data frames (more on this later!) 
+1. Add [code folding](https://quarto.org/docs/output-formats/html-code.html#folding-code)
 
-`r emo::ji("yarn")` **Knit** to HTML to see the output.
+**Render** to HTML to see the output.
 
-**If this was easy**, try to embed the `Rmd` source code to download.
+**If this was all easy**, try adding a code tools: https://quarto.org/docs/output-formats/html-code.html#code-tools
 
 _psst...answers on the next slide..._
 
 ```{r echo = FALSE}
-countdown(minutes = 3)
+countdown(minutes = 5)
 ```
 
 ---
@@ -1196,6 +1327,70 @@ yml_empty() %>%
   asis_yaml_output()
 ```
 
+---
+
+# What is hard about YAML?
+
+.pull-left[
+![](https://media.giphy.com/media/Nt2cPxzpKhbCE/giphy.gif)
+]
+
+.pull-right[
++ Indentations matter
+
++ Rarely informative error messages
+
++ Knowing which output options are relevant for different formats (i.e., Word, PDF, HTML, etc.)
+
++ Easy to forget the right `key`
+
++ Easy to forget the possible `values` for a given `key`
+]
+
+
+
+---
+class: middle
+
+# Pop quiz
+
+.pull-left[
+How do you add another output **format** to your YAML?
+
+```yaml
+---
+output: 
+  html_document: default
+  word_document: default
+---
+output: 
+  html_document()
+  word_document()
+---
+```
+
+]
+
+--
+
+
+.pull-right[
+How do you now add output **options** to your YAML?
+
+```yaml
+---
+output: 
+  html_document: 
+    toc: true
+  word_document: default
+---
+output: 
+  html_document(toc=true)
+  word_document(default)
+---
+```
+
+]
 
 ---
 class: your-turn
