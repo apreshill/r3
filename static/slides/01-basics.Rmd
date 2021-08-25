@@ -1401,17 +1401,15 @@ format:
 ---
 class: your-turn
 
-# Your turn
-
-## New data dump! `r emo::ji("newspaper")`
+# Your turn:New data dump! `r emo::ji("newspaper")`
 
 Data from more sites just came in &mdash; we now have data for Boston, Seattle, and Denver.
 
 1. Replace `mockboston` in the file `mockbsd`. 
 
-1. `r emo::ji("yarn")` **Knit** to HTML. Do you see data for all 3 sites?
+1. **Render** to HTML. Do you see data for all 3 sites?
 
-1. Clean up the chunks (split, combine, label, use options as you see fit)
+1. Clean up the chunks (split, combine, use options as you see fit)
 
 1. Use the RStudio outline pane; rejoice!
 
