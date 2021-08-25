@@ -171,17 +171,33 @@ knitr::include_graphics("images/rmd-file.png")
 ]
 
 ---
-class: middle, center
+class: middle
+
+.pull-left[
 
 | Time (PDT)      | Activity                                |
 |:----------------|:----------------------------------------|
 | 12:30 - 01:20pm | Session 1 (Basics)                      |
 | 01:20 - 01:30pm | *Break* `r emo::ji("coffee")`           |
-| 01:30 - 02:20pm | Session 2 (Figures & Tables)            |
+| 01:30 - 02:20pm | Session 2 (Authoring)                   |
 | 02:20 - 02:30pm | *Break* `r emo::ji("tea")`              |
 | 02:30 - 03:20pm | Session 3 (Projects & Workflows)        |
 | 03:20 - 03:30pm | *Break* `r emo::ji("potable_water")`    |
 | 03:30 - 04:00pm | Wrap-up / Q & A                         |
+]
+
+--
+
+.pull-right[
+Format:
+
++ Live demos / slides
++ Solo activities called "Your Turns" (with timer)
++ No group activities
++ Video on or off
++ Choose your own adventure style
+
+]
 
 ---
 class: middle, left, inverse
@@ -598,7 +614,7 @@ Receiving rubella vaccination, Brazil, 2008.
 ---
 class: middle
 
-# Check in
+# Check-in
 
 --
 
@@ -1161,6 +1177,8 @@ class: middle, center
 
 # Output formats
 
+
+
 ---
 class: your-turn
 
@@ -1168,126 +1186,25 @@ class: your-turn
 
 ## Use a different built-in format
 
-.pull-left[
 
-Use the drop-down menu for the `r emo::ji("yarn")` **Knit** button and try:
+Inside `01-explore.qmd`, edit the YAML to include Word `docx`:
 
-1. Knit to Word
-
-1. Knit to PDF
-
-]
-
-.pull-right[
-```{r echo=FALSE, out.width="60%", fig.align="center"}
-knitr::include_graphics("images/knit-dropdown.png")
+```yaml
+---
+format:
+  docx: default
+  html: default
+---
 ```
 
-]
+Render, and follow the steps to preview it.
+
+Note: Our version of RStudio here is not updating the Render button properly. This *does* happen on desktop!
+
 
 ```{r echo = FALSE}
 countdown(minutes = 2)
 ```
-
----
-class: middle
-
-# Check-in
-
-.pull-left[
-How do you use only the **default** output options?
-
-(a)
-```yaml
----
-output: html_document()
----
-```
-(b)
-```yaml
----
-output: html_document
----
-```
-
-]
-
---
-
-.pull-right[
-How do you add an output **option** to a format in your YAML?
-
-(a)
-```yaml
----
-output: 
-  html_document: 
-    toc: true
----
-```
-
-(b)
-```yaml
----
-output: 
-  html_document(toc=true)
----
-```
-
-]
-
----
-class: middle
-
-# Check-in
-
-.pull-left[
-How do you add another output **format** to your YAML?
-
-(a)
-```yaml
----
-output: 
-  html_document: default
-  word_document: default
----
-```
-(b)
-```
----
-output: 
-  html_document()
-  word_document()
----
-```
-
-]
-
---
-
-
-.pull-right[
-How do you now add output **options** to your YAML?
-
-(a)
-```yaml
----
-output: 
-  html_document: 
-    toc: true
-  word_document: default
----
-```
-(b)
-```
----
-output: 
-  html_document(toc=true)
-  word_document(default)
----
-```
-
-]
 
 ---
 class: middle, center
@@ -1328,12 +1245,97 @@ knitr::include_graphics("images/orchestra.jpg")
 ```
 
 ]
+---
+class: middle
+
+# Check-in
+
+.pull-left[
+How do you use a **single** format?
+
+(a)
+```yaml
+format: html
+```
+(b)
+```yaml
+output: html_document
+```
+
+]
+
+--
+
+.pull-right[
+How do you set **options** for a format?
+
+(a)
+```yaml
+format: 
+  html: 
+    toc: true
+```
+
+(b)
+```yaml
+output: 
+  html_document(toc=true)
+```
+
+]
+
+---
+class: middle
+
+# Check-in
+
+.pull-left[
+How do you add another output **format**?
+
+(a)
+```yaml
+format: 
+  html: default
+  docx: default
+```
+(b)
+```
+output: 
+  html_document()
+  word_document()
+```
+
+]
+
+--
+
+
+.pull-right[
+How do you add output **options** to one format?
+
+(a)
+```yaml
+format: 
+  html: 
+    toc: true
+  docx: default
+```
+(b)
+```
+output: 
+  html_document(toc=true)
+  word_document(default)
+```
+
+]
+
+
 
 ---
 
 # Your turn: Edit your YAML
 
-Use the linked Quarto docs to:
+Move the `html` format to the top (above `docx`), then use the linked Quarto docs to:
 
 1. Add a [table of contents](https://quarto.org/docs/output-formats/html-basics.html#table-of-contents)
 
@@ -1345,7 +1347,7 @@ Use the linked Quarto docs to:
 
 **Render** to HTML to see the output.
 
-**If this was all easy**, try adding [code folding](https://quarto.org/docs/output-formats/html-code.html#folding-code) (**hint: make sure `echo: true`)
+**If this was all easy**, try adding [code folding](https://quarto.org/docs/output-formats/html-code.html#folding-code) (*hint: make sure `echo: true` *)
 
 _psst...answers on the next slide..._
 

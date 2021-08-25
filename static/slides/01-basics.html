@@ -147,17 +147,33 @@ class: middle, center
 ]
 
 ---
-class: middle, center
+class: middle
+
+.pull-left[
 
 | Time (PDT)      | Activity                                |
 |:----------------|:----------------------------------------|
 | 12:30 - 01:20pm | Session 1 (Basics)                      |
 | 01:20 - 01:30pm | *Break* ☕           |
-| 01:30 - 02:20pm | Session 2 (Figures &amp; Tables)            |
+| 01:30 - 02:20pm | Session 2 (Authoring)                   |
 | 02:20 - 02:30pm | *Break* 🍵              |
 | 02:30 - 03:20pm | Session 3 (Projects &amp; Workflows)        |
 | 03:20 - 03:30pm | *Break* 🚰    |
 | 03:30 - 04:00pm | Wrap-up / Q &amp; A                         |
+]
+
+--
+
+.pull-right[
+Format:
+
++ Live demos / slides
++ Solo activities called "Your Turns" (with timer)
++ No group activities
++ Video on or off
++ Choose your own adventure style
+
+]
 
 ---
 class: middle, left, inverse
@@ -188,7 +204,7 @@ Try to identify these parts in the source:
 
 _psst...`01-explore-alison-params.qmd` is also there..._
 
-<div class="countdown" id="timer_61267031" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_61268195" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -572,7 +588,7 @@ Receiving rubella vaccination, Brazil, 2008.
 ---
 class: middle
 
-# Check in
+# Check-in
 
 --
 
@@ -627,7 +643,7 @@ Using the visual markdown editor, make this table:
 
 _psst...markdown on the next slide..._
 
-<div class="countdown" id="timer_612670f2" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_61267f83" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -1217,6 +1233,8 @@ class: middle, center
 
 # Output formats
 
+
+
 ---
 class: your-turn
 
@@ -1224,124 +1242,25 @@ class: your-turn
 
 ## Use a different built-in format
 
-.pull-left[
 
-Use the drop-down menu for the 🧶 **Knit** button and try:
+Inside `01-explore.qmd`, edit the YAML to include Word `docx`:
 
-1. Knit to Word
+```yaml
+---
+format:
+  docx: default
+  html: default
+---
+```
 
-1. Knit to PDF
+Render, and follow the steps to preview it.
 
-]
+Note: Our version of RStudio here is not updating the Render button properly. This *does* happen on desktop!
 
-.pull-right[
-&lt;img src="images/knit-dropdown.png" width="60%" style="display: block; margin: auto;" /&gt;
 
-]
-
-<div class="countdown" id="timer_61266fcd" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_612682ce" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
-
----
-class: middle
-
-# Check-in
-
-.pull-left[
-How do you use only the **default** output options?
-
-(a)
-```yaml
----
-output: html_document()
----
-```
-(b)
-```yaml
----
-output: html_document
----
-```
-
-]
-
---
-
-.pull-right[
-How do you add an output **option** to a format in your YAML?
-
-(a)
-```yaml
----
-output: 
-  html_document: 
-    toc: true
----
-```
-
-(b)
-```yaml
----
-output: 
-  html_document(toc=true)
----
-```
-
-]
-
----
-class: middle
-
-# Check-in
-
-.pull-left[
-How do you add another output **format** to your YAML?
-
-(a)
-```yaml
----
-output: 
-  html_document: default
-  word_document: default
----
-```
-(b)
-```
----
-output: 
-  html_document()
-  word_document()
----
-```
-
-]
-
---
-
-
-.pull-right[
-How do you now add output **options** to your YAML?
-
-(a)
-```yaml
----
-output: 
-  html_document: 
-    toc: true
-  word_document: default
----
-```
-(b)
-```
----
-output: 
-  html_document(toc=true)
-  word_document(default)
----
-```
-
-]
 
 ---
 class: middle, center
@@ -1380,12 +1299,97 @@ format:
 &lt;img src="images/orchestra.jpg" width="75%" style="display: block; margin: auto;" /&gt;
 
 ]
+---
+class: middle
+
+# Check-in
+
+.pull-left[
+How do you use a **single** format?
+
+(a)
+```yaml
+format: html
+```
+(b)
+```yaml
+output: html_document
+```
+
+]
+
+--
+
+.pull-right[
+How do you set **options** for a format?
+
+(a)
+```yaml
+format: 
+  html: 
+    toc: true
+```
+
+(b)
+```yaml
+output: 
+  html_document(toc=true)
+```
+
+]
+
+---
+class: middle
+
+# Check-in
+
+.pull-left[
+How do you add another output **format**?
+
+(a)
+```yaml
+format: 
+  html: default
+  docx: default
+```
+(b)
+```
+output: 
+  html_document()
+  word_document()
+```
+
+]
+
+--
+
+
+.pull-right[
+How do you add output **options** to one format?
+
+(a)
+```yaml
+format: 
+  html: 
+    toc: true
+  docx: default
+```
+(b)
+```
+output: 
+  html_document(toc=true)
+  word_document(default)
+```
+
+]
+
+
 
 ---
 
 # Your turn: Edit your YAML
 
-Use the linked Quarto docs to:
+Move the `html` format to the top (above `docx`), then use the linked Quarto docs to:
 
 1. Add a [table of contents](https://quarto.org/docs/output-formats/html-basics.html#table-of-contents)
 
@@ -1397,11 +1401,11 @@ Use the linked Quarto docs to:
 
 **Render** to HTML to see the output.
 
-**If this was all easy**, try adding [code folding](https://quarto.org/docs/output-formats/html-code.html#folding-code) (**hint: make sure `echo: true`)
+**If this was all easy**, try adding [code folding](https://quarto.org/docs/output-formats/html-code.html#folding-code) (*hint: make sure `echo: true` *)
 
 _psst...answers on the next slide..._
 
-<div class="countdown" id="timer_61266fcd" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_6126805a" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -1470,7 +1474,7 @@ Data from more sites just came in &amp;mdash; we now have data for Boston, Seatt
 _psst...`01-explore-alison-params.qmd` is still there..._
 
 
-<div class="countdown" id="timer_6126707b" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_61267f7c" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -1515,7 +1519,7 @@ class: middle, center
 
 # Time for a break!
 
-<div class="countdown blink-colon noupdate-15" id="timer_61267017" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown blink-colon noupdate-15" id="timer_612681c1" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
