@@ -890,7 +890,7 @@ mockdata %>%
 
 # Your turn: Part 2 of 2
 
-Now go through `02-draft-revised.Rmd` and read the source, then knit.
+Now go through `02-draft-revised.Rmd` and read the source, then render.
 
 .pull-left[
 
