@@ -16,8 +16,6 @@ output:
       countIncrementalSlides: false
       ratio: "16:9"
       beforeInit: "https://platform.twitter.com/widgets.js"
-    includes:
-      in_header: assets/header.html
 params:
   cloud_link: "https://rstd.io/r3-cloud"
 ---
