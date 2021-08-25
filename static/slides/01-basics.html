@@ -3,7 +3,7 @@
   <head>
     <title>The basics</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Alison Hill &amp; Paul Villanueva" />
+    <meta name="author" content="Alison Hill" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/countdown/countdown.css" rel="stylesheet" />
@@ -34,7 +34,7 @@ background-color: #0071B8
 
 ## R / Medicine 2021
 
-### Alison Hill &amp; Paul Villanueva &amp;#183; RStudio
+### Alison Hill &amp;#183; RStudio
 
 #### [r3-rmedicine.netlify.app](https://r3-rmedicine.netlify.app)
 ]
@@ -53,21 +53,6 @@ https://rstd.io/r3-cloud
 layout: true
 
 &lt;div class="my-footer"&gt;&lt;span&gt;https://rstd.io/r3-cloud&lt;/span&gt;&lt;/div&gt;
-
-
----
-class: middle, center
-
-| Time (PDT)      | Activity                                |
-|:----------------|:----------------------------------------|
-| 12:30 - 01:20pm | Session 1 (Basics)                      |
-| 01:20 - 01:30pm | *Break* ☕           |
-| 01:30 - 02:20pm | Session 2 (Figures &amp; Tables)            |
-| 02:20 - 02:30pm | *Break* 🍵              |
-| 02:30 - 03:20pm | Session 3 (Projects &amp; Workflows)        |
-| 03:20 - 03:30pm | *Break* 🚰    |
-| 03:30 - 04:00pm | Wrap-up / Q &amp; A                         |
-
 
 ---
 class: middle, center
@@ -112,7 +97,6 @@ background-image: url(images/deardata.jpg)
 background-size: 50%
 
 .footnote[https://www.dear-data.com/]
-
 
 ---
 class: center
@@ -162,6 +146,28 @@ class: middle, center
 
 ]
 
+---
+class: middle, center
+
+| Time (PDT)      | Activity                                |
+|:----------------|:----------------------------------------|
+| 12:30 - 01:20pm | Session 1 (Basics)                      |
+| 01:20 - 01:30pm | *Break* ☕           |
+| 01:30 - 02:20pm | Session 2 (Figures &amp; Tables)            |
+| 02:20 - 02:30pm | *Break* 🍵              |
+| 02:30 - 03:20pm | Session 3 (Projects &amp; Workflows)        |
+| 03:20 - 03:30pm | *Break* 🚰    |
+| 03:30 - 04:00pm | Wrap-up / Q &amp; A                         |
+
+---
+class: middle, left, inverse
+background-image: url(images/01-explore.png)
+background-position: right
+background-size: contain
+
+# Live demo: 
+
+### RStudio Cloud
 
 ---
 class: your-turn
@@ -182,7 +188,7 @@ Try to identify these parts in the source:
 
 _psst...`01-explore-alison-params.qmd` is also there..._
 
-<div class="countdown" id="timer_612668f4" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_61267031" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -238,27 +244,35 @@ background-color: #fff
 ]
 
 ---
+background-image: url(images/hexes.png)
+background-size: contain
+background-position: left
+class: left, middle
+background-color: #fff
+
+.pull-right[
+# What is Quarto?
+
++ A command line interface (CLI) installed at your terminal (not an R package!)
+    + &lt;https://quarto.org/docs/getting-started/installation.html&gt;
+    
++ Built in RStudio support with a daily version build
+    + &lt;https://quarto.org/docs/tools/rstudio.html&gt;
+]
+
+---
 background-image: url(images/py-alone.png)
 background-size: contain
 
 
 # Why Quarto?
 
-
-
 ---
 class: middle, center
 background-image: url(images/py-together.png)
 background-size: contain
 
----
-background-image: url(images/hexes.png)
-background-size: contain
-background-position: left
-class: right, middle
-background-color: #fff
 
-# Why Quarto?
 
 ---
 background-image: url(images/quarto-how.png)
@@ -274,7 +288,17 @@ background-image: url(images/render.png)
 class: middle center
 background-position: 50% 60%
 
-# Let's render!
+# Hello, Quarto!
+
+---
+class: middle, left, inverse
+background-image: url(images/01-explore-html.png)
+background-position: right
+background-size: contain
+
+# Live demo: 
+
+### We render together
 
 ---
 class: inverse
@@ -603,11 +627,12 @@ Using the visual markdown editor, make this table:
 
 _psst...markdown on the next slide..._
 
-<div class="countdown" id="timer_61266897" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_612670f2" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
 ---
+
 # Your turn
 
 ## Markdown versions
@@ -973,6 +998,41 @@ glimpse(mockdata)
 
 ]
 
+---
+
+# message / warning
+
+
+
+![](https://www.tidyverse.org/images/tidyverse_1.2.0/tidyverse_1-2-0_pkg_load.gif)
+
+
+
+---
+
+# message / warning
+
+.pull-left[
+
+````
+```{r}
+#| message: FALSE
+#| warning: FALSE
+library(tidyverse)
+```
+````
+
+]
+
+.pull-right[
+
+
+```r
+library(tidyverse)
+```
+
+]
+
 
 ---
 
@@ -992,6 +1052,8 @@ glimpse(mockdata)
 
 + Stack multiples 
 
++ Uses colon `:`
+
 ]
 
 .pull-right[
@@ -1005,37 +1067,7 @@ glimpse(mockdata)
 
 + List multiples separated by commas&lt;br&gt;`{r option1=value, option2=value}`
 
-]
----
-
-# message / warning
-
-
-
-![](https://www.tidyverse.org/images/tidyverse_1.2.0/tidyverse_1-2-0_pkg_load.gif)
-
-
-
----
-
-# message / warning
-
-.pull-left[
-
-````
-```{r message=FALSE, warning=FALSE}
-library(tidyverse)
-```
-````
-
-]
-
-.pull-right[
-
-
-```r
-library(tidyverse)
-```
++ Uses equal sign `=`
 
 ]
 
@@ -1108,33 +1140,6 @@ str(knitr::opts_chunk$get())
 ]
 
 
----
-
-# Global options
-
-
-
-.pull-left[
-
-```.yaml
----
-execute:
-  echo: false
-  messages: false
-  warning: false
-  out.width: "100%" 
----
-```
-
-]
-
-.pull-right[
-
-+ Use `execute` in your YAML to cement
-
-+ You can (and should) use individual chunk options too
-
-]
 
 ---
 class: middle, center, inverse
@@ -1174,6 +1179,42 @@ key: value
 ---
 class: middle, center
 
+# Execution options
+
+---
+
+# Execution options
+
+Set globally for the whole document.
+
+.pull-left[
+
+```.yaml
+---
+execute:
+  echo: false
+  messages: false
+  warning: false
+  out.width: "100%" 
+---
+```
+
+]
+
+.pull-right[
+
++ Use `execute` in your YAML to cement
+
++ You can (and should) use individual chunk options too
+
++ No need for a `knitr` setup chunk!
+
+]
+
+
+---
+class: middle, center
+
 # Output formats
 
 ---
@@ -1198,7 +1239,7 @@ Use the drop-down menu for the 🧶 **Knit** button and try:
 
 ]
 
-<div class="countdown" id="timer_612667c6" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_61266fcd" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -1346,38 +1387,41 @@ format:
 
 Use the linked Quarto docs to:
 
-1. Add a [floating table of contents](https://quarto.org/docs/output-formats/html-basics.html#table-of-contents)
+1. Add a [table of contents](https://quarto.org/docs/output-formats/html-basics.html#table-of-contents)
 
 1. Add [commenting](https://quarto.org/docs/output-formats/html-basics.html#commenting)
 
 1. Add a [theme](https://quarto.org/docs/output-formats/html-themes.html)
 
-1. Add [code folding](https://quarto.org/docs/output-formats/html-code.html#folding-code)
+1. Add [code tools](https://quarto.org/docs/output-formats/html-code.html#code-tools)
 
 **Render** to HTML to see the output.
 
-**If this was all easy**, try adding a code tools: https://quarto.org/docs/output-formats/html-code.html#code-tools
+**If this was all easy**, try adding [code folding](https://quarto.org/docs/output-formats/html-code.html#folding-code) (**hint: make sure `echo: true`)
 
 _psst...answers on the next slide..._
 
-<div class="countdown" id="timer_6126699c" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_61266fcd" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
 ---
-class: your-turn
 
 # Answers
 
 ```yaml
 ---
-output:
-  html_document:
+execute:
+  echo: true
+  messages: false
+  warning: false
+format: 
+  html:
+    theme: "lux"
     toc: true
-    toc_float: true
-    theme: flatly
-    df_print: kable
-    code_download: true
+    code-fold: true
+    code-summary: "Show the code"
+    code-tools: true
 ---
 ```
 
@@ -1403,48 +1447,6 @@ output:
 
 
 
----
-class: middle
-
-# Pop quiz
-
-.pull-left[
-How do you add another output **format** to your YAML?
-
-```yaml
----
-output: 
-  html_document: default
-  word_document: default
----
-output: 
-  html_document()
-  word_document()
----
-```
-
-]
-
---
-
-
-.pull-right[
-How do you now add output **options** to your YAML?
-
-```yaml
----
-output: 
-  html_document: 
-    toc: true
-  word_document: default
----
-output: 
-  html_document(toc=true)
-  word_document(default)
----
-```
-
-]
 
 ---
 class: your-turn
@@ -1468,7 +1470,7 @@ Data from more sites just came in &amp;mdash; we now have data for Boston, Seatt
 _psst...`01-explore-alison-params.qmd` is still there..._
 
 
-<div class="countdown" id="timer_612667e3" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_6126707b" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -1483,7 +1485,7 @@ class: middle, center
 
 --
 
-✔️ **Style your document:** use YAML to add options to your chosen output format
+✔️ **Style your document:** use YAML to add formats and options 
 
 --
 
@@ -1503,7 +1505,7 @@ class: middle, center
 
 --
 
-🧶 early, 🧶 often
+Render early, render often
 
 
 ---
@@ -1513,7 +1515,7 @@ class: middle, center
 
 # Time for a break!
 
-<div class="countdown blink-colon noupdate-15" id="timer_6126678d" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown blink-colon noupdate-15" id="timer_61267017" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
