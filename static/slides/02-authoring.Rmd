@@ -472,7 +472,7 @@ Once you have:
 
 `r emo::ji("heavy_check_mark")` AND the plot label starts with `fig-`
 
-`r emo::ji("heavy_check_mark")` AND a figure caption using `fig-cap`
+`r emo::ji("heavy_check_mark")` AND a figure caption using `fig-cap` (**not `fig.cap`**)
 
 Then you can have:
 
@@ -518,52 +518,16 @@ ae_pct_plot
 
 
 ---
+class: inverse, middle
 
-Tabsets
+# Live code demo
 
-::: {.panel-tabset}
+We take these plots and use:
 
-:::
+1. Tabsets `::: {.panel-tabset}`
 
-#| layout-ncol: 2
----
+1. Panels with `#| layout-ncol: 2`
 
-# Your turn: Part 2 of 2
-
-Now go through `03-draft-revised.Rmd` and read the source, then knit.
-
-.pull-left[
-
-```{r eval=FALSE}
-# demographics-----------------------------
-age_density # multi-panel?    <-ignore this
-age_boxplot # multi-panel?    <-ignore this
-demo_tab
-
-# treatment response @ follow-up-----------
-surv_pct_plot # multi-panel?  <-ignore this
-surv_days_plot # multi-panel? <-ignore this
-fu_tab
-
-# adverse events---------------------------
-ae_pct_plot
-ae_tab
-```
-]
-
-.pull-right[
-1. Add new code chunks containing tables and plots where you want.
-
-1. Edit the code chunk options as you need to.
-
-1. Add headers and other Markdown formatting as you see fit.
-
-1. Feel free to add figure captions and in text cross-references.
-]
-
-```{r echo=FALSE}
-countdown(minutes = 5)
-```
 
 
 ---
@@ -645,7 +609,7 @@ class: middle, center, inverse
 
 Good for 1- and 2-way frequency tables with categorical variables
 
-Count number of participants by `arm`, then add by status (`fu_fct`) too
+Count number of participants by `arm`...
 
 .pull-left[
 
@@ -671,10 +635,13 @@ mockdata %>%
 
 ---
 
+Add by status (`fu_fct`) too.
+
 .pull-left[
 
 ````
-```{r results='asis'}`r ''`
+```{r}`r ''`
+#| results: 'asis'
 mockdata %>% 
   tabyl(arm, fu_fct) %>%
   knitr::kable()
@@ -694,7 +661,8 @@ mockdata %>%
 .pull-right[
 
 ````
-```{r results='asis'}`r ''`
+```{r}`r ''`
+#| results: 'asis'
 mockdata %>% 
   tabyl(arm, fu_fct) %>% 
   adorn_totals("row") %>%
@@ -750,7 +718,8 @@ class: your-turn
 # Answer
 
 ````
-```{r results='asis'}`r ''`
+```{r}`r ''`
+#| results: 'asis'
 mockdata %>% 
   tabyl(arm) %>% 
   adorn_totals("row") %>%
@@ -767,17 +736,6 @@ mockdata %>%
   knitr::kable()
 ```
 
----
-class: middle, center, inverse
-
-<span class="fa-stack fa-4x">
-  <i class="fa fa-circle fa-stack-2x" style="color: #fff;"></i>
-  <strong class="fa-stack-1x" style="color:#2f5275;">`r (episode_counter <- episode_counter + 1)` </strong>
-</span> 
-
---
-
-Tables
 
 ---
 class: middle
@@ -927,65 +885,44 @@ mockdata %>%
 
 ]
 
----
-class: middle, center, inverse
-
-<span class="fa-stack fa-4x">
-  <i class="fa fa-circle fa-stack-2x" style="color: #fff;"></i>
-  <strong class="fa-stack-1x" style="color:#2f5275;">`r (episode_counter <- episode_counter + 1)` </strong>
-</span> 
-
---
-
-# Table One
 
 ---
 
-```{r}
-mockdata %>% 
-  select(age, fu_fct) %>% 
-  tbl_summary()
+# Your turn: Part 2 of 2
+
+Now go through `02-draft-revised.Rmd` and read the source, then knit.
+
+.pull-left[
+
+```{r eval=FALSE}
+# demographics-----------------------------
+age_density 
+age_boxplot 
+demo_tab
+
+# treatment response @ follow-up-----------
+surv_pct_plot 
+surv_days_plot 
+fu_tab
+
+# adverse events---------------------------
+ae_pct_plot
+ae_tab
 ```
+]
 
-```{r}
-mockdata %>% 
-  select(sex, age, bmi, arm) %>% 
-  tbl_summary(by = arm) %>% 
-  add_p()
-```
+.pull-right[
+1. Add new code chunks containing tables and plots where you want.
 
----
+1. Edit the code chunk options as you need to.
 
-```{r}
-mockdata %>% 
-  select(sex, age, bmi, arm) %>% 
-  tbl_summary(by = arm, 
-              type = all_continuous() ~ "continuous2") %>% 
-  add_p()
-```
+1. Add headers and other Markdown formatting as you see fit.
 
-
-
----
-class: your-turn
-
-# Your turn
-
-## Make an adverse events table
-
-Find this section:
-
-```markdown
-<!--TODO: add adverse events table-->
-```
-
-1. When you select variables, add all that start with "ae" (hint: `starts_with("string"))`.
-
-1. Make the table grouped by treatment arm.
-
+1. Feel free to add figure captions and in text cross-references.
+]
 
 ```{r echo=FALSE}
-countdown(minutes = 3)
+countdown(minutes = 5)
 ```
 
 
